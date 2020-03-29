@@ -46,33 +46,29 @@ public class Login extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = mEmail.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
+                String email = mEmail.getText().toString();
+                String password = mPassword.getText().toString();
 
-                if (TextUtils.isEmpty(email)) {
-                    mEmail.setError("Email is Required");
+                if(TextUtils.isEmpty(email)){
+                    Toast.makeText(Login.this,"Enter Email",Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (TextUtils.isEmpty(password)) {
-                    mPassword.setError("Password is Required");
-                    return;
-                }
-                if (password.length() < 6) {
-                    mPassword.setError("Password Must be >= 6 Characters");
+                if(TextUtils.isEmpty(password)){
+                    Toast.makeText(Login.this,"Enter Password",Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
 
 
-                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+
+                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                    startActivity(new Intent(Login.this,MainActivity.class));
 
                                 } else {
-                                    Toast.makeText(Login.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Login.this,"Login error ",Toast.LENGTH_SHORT).show();
                                 }
 
                             }
