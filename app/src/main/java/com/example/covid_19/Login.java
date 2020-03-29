@@ -62,17 +62,17 @@ public class Login extends AppCompatActivity {
 
 
                 fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    startActivity(new Intent(Login.this,MainActivity.class));
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            startActivity(new Intent(Login.this,MainActivity.class));
 
-                                } else {
-                                    Toast.makeText(Login.this,"Login error ",Toast.LENGTH_SHORT).show();
-                                }
+                        } else {
+                            Toast.makeText(Login.this,"Login error ",Toast.LENGTH_SHORT).show();
+                        }
 
-                            }
-                        });
+                    }
+                });
             }
 
         });
