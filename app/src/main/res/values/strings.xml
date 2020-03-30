@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Covid_19</string>
     <string name="poom">Poom</string>
+    <string name="facebook_app_id">2313104295657363</string> <string name="fb_login_protocol_scheme">fb2313104295657363</string>
+
 </resources>
