@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
         //logout Google
-        GoogleSignIn.getClient(this,new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()).
-                signOut().addOnSuccessListener(new OnSuccessListener<Void>() {
+        FirebaseAuth.getInstance().signOut();
+        GoogleSignIn.getClient(this,new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build())
+                .signOut().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 startActivity(new Intent(view.getContext(),Login.class));

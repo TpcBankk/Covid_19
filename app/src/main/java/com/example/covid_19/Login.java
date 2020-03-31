@@ -34,6 +34,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -42,6 +43,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.google.firebase.auth.GoogleAuthProvider;
+
 import org.w3c.dom.Text;
 
 import java.security.MessageDigest;
@@ -63,6 +66,8 @@ public class Login extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient signInClient;
     LoginButton loginButton;
+    FirebaseAuth firebaseAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,7 +150,9 @@ public class Login extends AppCompatActivity {
 
         //login google account
         signIn = findViewById(R.id.signIn);
+        firebaseAuth = FirebaseAuth.getInstance();
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("676884319690-dvsc65ti6fe0a946as0rlhrcu56qilf0.apps.googleusercontent.com")
                 .requestEmail().build();
         signInClient = GoogleSignIn.getClient(this,gso);
 
@@ -172,8 +179,22 @@ public class Login extends AppCompatActivity {
 
             try{
                 GoogleSignInAccount signInAcc = signInTask.getResult(ApiException.class);
-                Toast.makeText(this, "Your Google Account is Connected to our Application", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,MainActivity.class));
+                AuthCredential authCredential = GoogleAuthProvider.getCredential(signInAcc.getIdToken(),null);
+
+                firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Toast.makeText(getApplicationContext(), "Your Google Account is Connected to our Application", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+
+
             } catch (ApiException e){
                 e.printStackTrace();
             }
