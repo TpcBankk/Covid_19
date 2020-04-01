@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
         //logout Google
-        FirebaseAuth.getInstance().signOut();
         GoogleSignIn.getClient(this,new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build())
                 .signOut().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -43,5 +42,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //facebook
     }
 }
