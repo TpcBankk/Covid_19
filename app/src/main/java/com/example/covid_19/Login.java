@@ -68,7 +68,7 @@ public class Login extends AppCompatActivity {
     LoginButton loginButton;
     FirebaseAuth firebaseAuth;
 
-    //test1
+    //test2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
