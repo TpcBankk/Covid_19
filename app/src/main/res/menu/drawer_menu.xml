@@ -7,9 +7,13 @@
                 android:icon="@drawable/ic_home_black_24dp"
                 android:title="Home" />
             <item
-                android:id="@+id/another"
+                android:id="@+id/question"
                 android:icon="@drawable/ic_group_add_black_24dp"
-                android:title="Another Menu" />
+                android:title="Question Page" />
+            <item
+                android:id="@+id/history"
+                android:icon="@drawable/ic_group_add_black_24dp"
+                android:title="History Page" />
         </menu>
     </item>
 
