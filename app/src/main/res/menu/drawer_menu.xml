@@ -8,25 +8,17 @@
                 android:title="Home" />
             <item
                 android:id="@+id/question"
-                android:icon="@drawable/ic_group_add_black_24dp"
+                android:icon="@drawable/ic_question_answer_black_24dp"
                 android:title="Question Page" />
             <item
                 android:id="@+id/history"
-                android:icon="@drawable/ic_group_add_black_24dp"
+                android:icon="@drawable/ic_history_black_24dp"
                 android:title="History Page" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/abc_vector_test"
+                android:title="Logout" />
         </menu>
     </item>
 
-    <item android:title="Communication">
-        <menu>
-            <item
-                android:id="@+id/home1"
-                android:icon="@drawable/ic_home_black_24dp"
-                android:title="Home" />
-            <item
-                android:id="@+id/another1"
-                android:icon="@drawable/ic_group_add_black_24dp"
-                android:title="Another Menu" />
-        </menu>
-    </item>
 </menu>
