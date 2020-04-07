@@ -7,7 +7,7 @@
                 android:icon="@drawable/ic_home_black_24dp"
                 android:title="Home" />
             <item
-                android:id="@+id/question"
+                android:id="@+id/questionPage"
                 android:icon="@drawable/ic_question_answer_black_24dp"
                 android:title="Question Page" />
             <item
