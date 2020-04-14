@@ -2,6 +2,7 @@ package com.example.covid_19;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,13 +13,14 @@ public class QuizActivity extends AppCompatActivity {
 
     private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
 
-    private TextView mScoreView;
+    private TextView mScoreView,mScoreView2;
     private  TextView mQuestionView;
     private Button mButtonChoice1;
     private Button mButtonChoice2;
 
     private String mAnswer;
     private int mScore = 0;
+    private int mScore2 = 0;
     private int mQuestionNumber = 0;
 
     @Override
@@ -27,6 +29,7 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 
         mScoreView = (TextView)findViewById(R.id.score);
+        mScoreView2 = (TextView)findViewById(R.id.score2);
         mQuestionView = (TextView)findViewById(R.id.question);
         mButtonChoice1 = (Button) findViewById(R.id.choicel_1);
         mButtonChoice2 = (Button) findViewById(R.id.choicel_2);
@@ -40,12 +43,17 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 if(mButtonChoice1.getText() == mAnswer){
-                    mScore = mScore + 1;
+                    if(mQuestionNumber <= 4 ){
+                        mScore = mScore + 1;
+                        updateScore(mScore);
+
+                    }if (mQuestionNumber > 4) {
+                        mScore2 = mScore2 + 1;
+                        updateScore(mScore2);
+                    }
                     updateScore(mScore);
                     updateQuestion();
-                    Toast.makeText(QuizActivity.this,"correct", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(QuizActivity.this,"wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
             }
@@ -56,12 +64,17 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 if(mButtonChoice2.getText() == mAnswer){
-                    mScore = mScore + 1;
+                    if(mQuestionNumber <= 4 ){
+                        mScore = mScore + 1;
+                        updateScore(mScore);
+
+                    }if (mQuestionNumber > 4){
+                        mScore2 = mScore2 + 1;
+                        updateScore(mScore2);
+                    }
                     updateScore(mScore);
                     updateQuestion();
-                    Toast.makeText(QuizActivity.this,"correct", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(QuizActivity.this,"wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
             }
@@ -77,10 +90,18 @@ public class QuizActivity extends AppCompatActivity {
 
         mAnswer = mQuestionLibrary.getCorrentAnswer(mQuestionNumber);
         mQuestionNumber++;
+        if(mQuestionNumber>10)
+        {
+            Intent resultIntent = new Intent (this, ResultActivity.class);
+            resultIntent.putExtra("Score",mScore);
+            resultIntent.putExtra("Score2",mScore2);
+            startActivity(resultIntent);
+        }
     }
 
     private void updateScore(int point){
         mScoreView.setText("" + mScore);
+        mScoreView2.setText("" + mScore2);
     }
 
 }

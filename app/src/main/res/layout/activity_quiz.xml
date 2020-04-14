@@ -11,7 +11,6 @@
     android:paddingTop="16dp"
     android:orientation="vertical"
     tools:context=".QuizActivity">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,15 +26,25 @@
             android:id="@+id/score_text" />
 
         <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:text="0"
+            android:textSize="20dp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
             android:textSize="20dp"
             android:layout_alignParentRight="true"
-            android:id="@+id/score"/>
+            android:id="@+id/score2"/>
 
 
     </RelativeLayout>
+
 
     <TextView
         android:layout_width="match_parent"
