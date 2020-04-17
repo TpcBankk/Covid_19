@@ -1,23 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="MainFragment"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageHospitalchula"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="70dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/chula" />
 
+    <ImageButton
+        android:id="@+id/imageHospitalratvithi"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/imageHospitalchula"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ratvithi1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/imageHospitalpaolo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/imageHospitalratvithi"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/paolo" />
+
+    <ImageButton
+        android:id="@+id/imageHospitalrama"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/imageHospitalpaolo"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/rama" />
+
+    <ImageButton
+        android:id="@+id/imageHospitalbpk"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_toEndOf="@+id/imageHospitalchula"
+        android:scaleType="fitXY"
+        android:src="@drawable/bpk" />
+
+    <ImageButton
+        android:id="@+id/imageHospitalphyathai2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/imageHospitalbpk"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/imageHospitalratvithi"
+        android:scaleType="fitXY"
+        android:src="@drawable/phyathai2" />
+
+    <ImageButton
+        android:id="@+id/imageHospitalrangsit"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/imageHospitalphyathai2"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/imageHospitalpaolo"
+        android:scaleType="fitXY"
+        android:src="@drawable/rangsit" />
+
+    <ImageButton
+        android:id="@+id/imageHospitalsirirat"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/imageHospitalrangsit"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/imageHospitalrama"
+        android:scaleType="fitXY"
+        android:src="@drawable/sirirat" />
+
+</RelativeLayout>
