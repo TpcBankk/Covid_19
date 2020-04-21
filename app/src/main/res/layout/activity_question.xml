@@ -11,25 +11,26 @@
     <RelativeLayout
         android:id="@+id/score"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
             android:padding="16dp"
             android:text="Score:"
-            android:fontFamily="casual"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
             android:layout_alignParentRight="true"
-            android:text="0"
             android:fontFamily="casual"
-            android:id="@+id/points"
-            android:textSize="20sp"/>
+            android:padding="16dp"
+            android:text="0"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 

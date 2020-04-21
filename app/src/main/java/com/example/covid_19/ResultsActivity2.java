@@ -25,9 +25,9 @@ public class ResultsActivity2 extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         int score = bundle.getInt("finalScore2");
 
-        if (score == 3){
+        if (score >7 && score <=14){
             mGrade.setText("ควรเฝ้าระวัง");
-        }else if (score > 4){
+        }else if (score > 14){
             mGrade.setText("อยู่ในกลุ่มเสี่ยง");
         }else {
             mGrade.setText("ไม่มีความเสี่ยง");

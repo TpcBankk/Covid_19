@@ -33,7 +33,21 @@ public class QuestionActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mAnswer2 == true) {
-                    mScore2++;
+                    if(mQuestionNumber2 == 1){
+                        mScore2= mScore2+8;
+                    }if(mQuestionNumber2 == 2){
+                        mScore2= mScore2+6;
+                    }if(mQuestionNumber2 == 3){
+                        mScore2= mScore2+3;
+                    }if(mQuestionNumber2 == 4){
+                        mScore2= mScore2+1;
+                    }if(mQuestionNumber2 == 5){
+                        mScore2= mScore2+1;
+                    }if(mQuestionNumber2 == 6){
+                        mScore2= mScore2+1;
+                    }if(mQuestionNumber2 == 7){
+                        mScore2= mScore2+1;
+                    }
                     updateScore(mScore2);
 
                     //perform check before you update the question
