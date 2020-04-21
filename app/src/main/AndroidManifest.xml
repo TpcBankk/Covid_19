@@ -13,8 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Login" />
-        <activity android:name=".QuizActivity" />
+        <activity android:name=".QuestionActivity" />
+        <activity android:name=".ResultsActivity"/>
+        <activity android:name=".ResultsActivity2"/>
+        <activity android:name=".QuestionActivity2" />
         <activity android:name=".LaunchActivity">
+
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
