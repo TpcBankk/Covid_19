@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
 
         }
-        if (menuItem.getItemId() == R.id.question){
+        if (menuItem.getItemId() == R.id.questionPage){
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.contener_fragment,new FragmentSecond());

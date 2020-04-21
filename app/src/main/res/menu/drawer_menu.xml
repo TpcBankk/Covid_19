@@ -7,7 +7,7 @@
                 android:icon="@drawable/call"
                 android:title="Hospital Covid Test Call Center Page" />
             <item
-                android:id="@+id/question"
+                android:id="@+id/questionPage"
                 android:icon="@drawable/ic_question_answer_black_24dp"
                 android:title="Covid 19 Risk Level Quiz Page" />
             <item
