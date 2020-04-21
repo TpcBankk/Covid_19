@@ -12,25 +12,60 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:padding="16dp"
+        android:padding="10dp"
         android:textColor="#000"
         android:fontFamily="casual"
         android:layout_margin="16dp"
+        android:layout_below="@+id/imageResult"
         android:id="@+id/grade2"
         android:text="Congratulations"/>
 
     <Button
-        android:layout_below="@+id/grade2"
         android:id="@+id/retry2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exit"
-        android:padding="8dp"
-        android:layout_margin="4dp"
-        android:textColor="#fff"
+        android:layout_below="@+id/detail"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:background="#4CAF50"
-        android:textSize="18sp"
         android:fontFamily="casual"
-        android:layout_centerHorizontal="true"/>
+        android:padding="8dp"
+        android:text="Exit"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grade2"
+        android:layout_marginTop="10dp"
+        android:id="@+id/recommend"
+        android:layout_marginLeft="20dp"
+        android:textSize="24sp"
+        android:text="คำแนะนำ:"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recommend"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/detail"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+
+         />
+
+    <ImageButton
+        android:id="@+id/imageResult"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="90dp"
+        android:scaleType="fitXY"
+         />
 
 </RelativeLayout>
