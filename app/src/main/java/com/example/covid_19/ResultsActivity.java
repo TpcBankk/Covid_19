@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ResultsActivity extends AppCompatActivity {
 
     TextView mGrade, mFinalScore;
@@ -20,17 +23,19 @@ public class ResultsActivity extends AppCompatActivity {
         mGrade = (TextView)findViewById(R.id.grade);
         mRetryButton = (Button)findViewById(R.id.retry);
 
-
         Bundle bundle = getIntent().getExtras();
         int score = bundle.getInt("finalScore");
 
         if (score == 1|| score == 2){
             mGrade.setText("ควรเฝ้าระวัง");
+
         }else if (score == 3|| score == 4){
             mGrade.setText("อยู่ในกลุ่มเสี่ยง");
+
         }else {
             mGrade.setText("ไม่มีความเสี่ยง");
         }
+
 
         mRetryButton.setOnClickListener(new View.OnClickListener() {
             @Override
