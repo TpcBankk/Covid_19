@@ -40,7 +40,7 @@ public class ResultsActivity2 extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         final int score = bundle.getInt("finalScore2");
-        final int score1 = bundle.getInt("finalScore");
+
 
         if ((score >7 && score <=14) ){
             mGrade.setText("ควรเฝ้าระวัง");
@@ -63,7 +63,7 @@ public class ResultsActivity2 extends AppCompatActivity {
                 startActivity(new Intent(ResultsActivity2.this, MainActivity.class));
                 ResultsActivity2.this.finish();
                 int result2 = score;
-                int result1 = score1;
+
 
                 if(result2 >7 && result2 <=14 ){
                     result.setAccount(currentUser.getEmail());

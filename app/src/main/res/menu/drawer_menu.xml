@@ -5,15 +5,15 @@
             <item
                 android:id="@+id/home"
                 android:icon="@drawable/call"
-                android:title="Hospital Covid Test Call Center Page" />
+                android:title="Covid-19 Hospital Call Center" />
             <item
                 android:id="@+id/questionPage"
                 android:icon="@drawable/ic_question_answer_black_24dp"
-                android:title="Covid 19 Risk Level Quiz Page" />
+                android:title="Covid-19 Risk Level Quiz" />
             <item
                 android:id="@+id/history"
-                android:icon="@drawable/ic_history_black_24dp"
-                android:title="History of Result Page" />
+                android:icon="@drawable/newspaper"
+                android:title="Covid-19 News" />
             <item
                 android:id="@+id/logout"
                 android:icon="@drawable/abc_vector_test"
