@@ -20,6 +20,18 @@
         android:id="@+id/grade2"
         android:text="Congratulations"/>
 
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="casual"
+        android:padding="10dp"
+        android:text="Congratulations"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="24sp" />
+
     <Button
         android:id="@+id/retry2"
         android:layout_width="wrap_content"

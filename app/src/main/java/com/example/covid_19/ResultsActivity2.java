@@ -30,6 +30,7 @@ public class ResultsActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_results2);
 
         mGrade = (TextView)findViewById(R.id.grade2);
+        mFinalScore = (TextView)findViewById(R.id.total);
         mRetryButton = (Button)findViewById(R.id.retry2);
         mImageView = (ImageView)findViewById(R.id.imageResult);
         mDetail = (TextView)findViewById(R.id.detail);
@@ -40,13 +41,15 @@ public class ResultsActivity2 extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         final int score = bundle.getInt("finalScore2");
+        float total;
+        total =  ((float)score/298)*100;
+        mFinalScore.setText(String.valueOf(total));
 
-
-        if ((score >7 && score <=14) ){
+        if ((total > 34 && total <=66) ){
             mGrade.setText("ควรเฝ้าระวัง");
             mImageView.setImageDrawable(getResources().getDrawable(R.drawable.lv2));
-            mDetail.setText("เฟส2 :ผู้ใช้งานอยู่ในระยะควรเฝ้าระวัฃอาการโดยให้ดูและสุขภาพตัวเองและพักผ่อนให้เพียงพอและควรกักตัวเองอยู่ในบ้าน14-27วันเพื่อเฝ้าดูอาการและลดความเสี่ยงในการพบและกระจายเชื้อ");
-        }else if (score > 14 ){
+            mDetail.setText("เฟส2 :ผู้ใช้งานอยู่ในระยะควรเฝ้าระวัฃอาการโดยให้ดูแลสุขภาพตัวเองและพักผ่อนให้เพียงพอและควรกักตัวเองอยู่ในบ้าน14-27วันเพื่อเฝ้าดูอาการและลดความเสี่ยงในการพบและกระจายเชื้อ");
+        }else if (total > 66 ){
             mGrade.setText("อยู่ในกลุ่มเสี่ยง");
             mImageView.setImageDrawable(getResources().getDrawable(R.drawable.lv3));
             mDetail.setText("เฟส3 :หากมีอาการดังกล่าว ควรพบแพทย์เพื่อทำการตรวจอย่างละเอียด และเมื่อแพทย์ซักถามควรตอบตามความเป็นจริง ไม่ปิดบัง ไม่บิดเบือนข้อมูลใด ๆ เพราะจะเป็นประโยชน์ต่อการวินิจฉัยโรคอย่างถูกต้องมากที่สุดและ\n" +
@@ -64,12 +67,15 @@ public class ResultsActivity2 extends AppCompatActivity {
                 ResultsActivity2.this.finish();
                 int result2 = score;
 
+                float total;
+                total = ((float)result2/298)*100;
 
-                if(result2 >7 && result2 <=14 ){
+
+                if(total >34 && total <=66 ){
                     result.setAccount(currentUser.getEmail());
                     result.setResult2(mGrade.getText().toString());
                 }
-                else if(result2 > 14){
+                else if(total > 66){
                     result.setAccount(currentUser.getEmail());
                     result.setResult2(mGrade.getText().toString());
                 }

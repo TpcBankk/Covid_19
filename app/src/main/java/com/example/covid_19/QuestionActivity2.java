@@ -34,19 +34,23 @@ public class QuestionActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 if(mAnswer2 == true) {
                     if(mQuestionNumber2 == 1){
-                        mScore2= mScore2+8;
+                        mScore2= mScore2+88;
                     }if(mQuestionNumber2 == 2){
-                        mScore2= mScore2+6;
+                        mScore2= mScore2+68;
                     }if(mQuestionNumber2 == 3){
-                        mScore2= mScore2+3;
+                        mScore2= mScore2+38;
                     }if(mQuestionNumber2 == 4){
-                        mScore2= mScore2+1;
+                        mScore2= mScore2+33;
                     }if(mQuestionNumber2 == 5){
-                        mScore2= mScore2+1;
+                        mScore2= mScore2+18;
                     }if(mQuestionNumber2 == 6){
-                        mScore2= mScore2+1;
+                        mScore2= mScore2+14;
                     }if(mQuestionNumber2 == 7){
-                        mScore2= mScore2+1;
+                        mScore2= mScore2+14;
+                    }if(mQuestionNumber2 == 8){
+                        mScore2= mScore2+14;
+                    }if(mQuestionNumber2 == 9){
+                        mScore2= mScore2+11;
                     }
                     updateScore(mScore2);
 
